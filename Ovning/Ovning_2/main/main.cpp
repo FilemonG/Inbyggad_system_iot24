@@ -7,8 +7,8 @@ extern "C"
 {
     void app_main(void)
     {
-        //int a = Ovning_2::func();
-        //ESP_LOGI("MAIN", " returned %d", a);
+        int a = Ovning_2::func();
+        ESP_LOGI("MAIN", " returned %d", a);
        inbyggda_IoT24::printNumbers(0, 10);
     }
    
