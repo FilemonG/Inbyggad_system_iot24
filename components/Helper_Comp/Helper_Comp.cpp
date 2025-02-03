@@ -15,6 +15,6 @@ namespace Inbyggda_IoT24
         return 0;
     }
     //void takeTimeAndPrintEverySecond (int time);
-    void multiply (int a, int b);
+    //void multiply (int a, int b);
     
 }

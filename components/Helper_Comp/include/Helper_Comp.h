@@ -5,6 +5,6 @@ namespace inbyggda_IoT24
 
    int printNumbers (int start, int stop){return 0;}
    //void takeTimeAndPrintEverySecond (int time);
-   void multiply (int a, int b);
+   //void multiply (int a, int b);
 }
 
