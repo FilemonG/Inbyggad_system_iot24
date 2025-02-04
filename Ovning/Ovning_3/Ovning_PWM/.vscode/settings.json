@@ -8,6 +8,8 @@
     "idf.toolsPath": "/Users/filimonangosom/.espressif",
     "idf.flashType": "UART",
     "files.associations": {
-        "gpio.h": "c"
+        "gpio.h": "c",
+        "freertos.h": "c",
+        "esp_err.h": "c"
     }
 }

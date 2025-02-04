@@ -29,6 +29,8 @@ void app_main(void)
     ledcConf.timer_num = LEDC_TIMER_0;
     ledc_timer_config(&ledcConf);
 
+    ledc_channel_config_t channelConf;
+
     int level = gpio_get_level(GPIO_NUM_18);
 
     TickType_t startTik = xTaskGetTickCount();
