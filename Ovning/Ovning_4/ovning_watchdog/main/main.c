@@ -17,14 +17,15 @@
 void app_main(void)
 {
     //bool pressed = false;
-    gpio_config_t pinKonfig;
-    pinKonfig.mode = GPIO_MODE_INPUT;
-    pinKonfig.pin_bit_mask = 1ULL << BUTT_PIN;
-    pinKonfig.pull_down_en = GPIO_PULLDOWN_DISABLE;
-    pinKonfig.pull_up_en = GPIO_PULLUP_ENABLE;
-    pinKonfig.intr_type= GPIO_INTR_NEGEDGE;
+    gpio_config_t pinKonfig = {
+    .mode = GPIO_MODE_INPUT,
+    .pin_bit_mask = 1ULL << BUTT_PIN,
+    .pull_down_en = GPIO_PULLDOWN_DISABLE,
+    .pull_up_en = GPIO_PULLUP_ENABLE,
+    .intr_type= GPIO_INTR_NEGEDGE,
+    
+    };
     esp_err_t error = gpio_config(&pinKonfig);
-
     
     esp_task_wdt_config_t watchDog = {
         .idle_core_mask = IDEL_CORE_0_BIT | IDLE_CORE_1_BIT,
