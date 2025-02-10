@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/uart.h"
@@ -6,6 +7,8 @@
 #include "sdkconfig.h"
 #include <string.h>
 #include "esp_log.h"
+
+
 
 #define ANSI_RED "\033[0;31m"
 #define ANSI_GREEN "\033[0;32m"
@@ -37,7 +40,7 @@ void app_main(void)
     ESP_ERROR_CHECK(uart_set_pin(UART_NUM,UART_TX_NUM,UART_RX_NUM,RTS_IO_NUM,CTS_IO_NUM));
     ESP_ERROR_CHECK(uart_driver_install(UART_NUM,buffer_size,buffer_size, 0,NULL,0));
     
-    //uint8_t *data = (uint8_t *) malloc(buffer_size);
+
     TickType_t sentTm = xTaskGetTickCount();
     while (true)
     {
@@ -45,7 +48,7 @@ void app_main(void)
         if (elapsTm > pdMS_TO_TICKS(UART_SEND_PERIOD))
         {
             sentTm+= pdMS_TO_TICKS(UART_SEND_PERIOD);
-            char* test = "Hej Världen\n";
+            char* test = "Hej Madde";
             int bytesSent = uart_write_bytes(UART_NUM,(const char*)test, strlen(test));
             if (bytesSent < 0)
             {
@@ -53,7 +56,7 @@ void app_main(void)
             }
             else if (bytesSent > 0)
             {
-                printf(ANSI_GREEN"Sent %d to uart \n",bytesSent);
+                printf(ANSI_GREEN"Sent "ANSI_Yellow"%s"ANSI_GREEN" to uart \n",test);
             }
             else 
             {
