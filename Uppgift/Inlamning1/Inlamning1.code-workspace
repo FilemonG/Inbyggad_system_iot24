@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../components"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"__locale": "cpp"
+		}
+	}
+}
