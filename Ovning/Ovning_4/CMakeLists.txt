@@ -4,5 +4,6 @@
 # CMakeLists in this exact order for cmake to work correctly
 cmake_minimum_required(VERSION 3.5)
 
+    
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(Communcation_UART_I2C)
+project(Ovning_4)
