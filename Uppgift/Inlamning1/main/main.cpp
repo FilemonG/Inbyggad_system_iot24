@@ -12,15 +12,16 @@ extern "C"
 {
     void app_main(void)
     {
-        Button myButton = Button(GPIO_NUM_10, GPIO_PULLUP_ENABLE ,GPIO_PULLDOWN_DISABLE, GPIO_INTR_NEGEDGE);
+        Button myButton = Button(GPIO_NUM_12, GPIO_PULLUP_ENABLE ,GPIO_PULLDOWN_DISABLE, GPIO_INTR_NEGEDGE, 0,off,off,false);
         myButton.init();   //funktioner.  deklarera först sen definerar
         myButton.button_uppdate();
         myButton.isPressed();
         myButton.setOnPressed(pressState);
+        
         while (1)
             {
                 myButton.button_uppdate();
-                vTaskDelay(100);
+                vTaskDelay(pdMS_TO_TICKS(200));
             }
     }
 }
