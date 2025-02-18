@@ -59,7 +59,7 @@ void Button::button_uppdate(){
     break;
    }
   
-    printf(ANSI_Yellow"lvl: %d state: %d\n", level, curr_state);
+    //printf(ANSI_Yellow"lvl: %d state: %d\n", level, curr_state);
     elapsetime = time;
 }
 bool Button::isPressed(){

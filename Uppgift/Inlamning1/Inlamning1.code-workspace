@@ -43,7 +43,15 @@
 			"regex": "cpp",
 			"set": "cpp",
 			"span": "cpp",
-			"chrono": "cpp"
+			"chrono": "cpp",
+			"__node_handle": "cpp",
+			"locale": "cpp",
+			"ratio": "cpp",
+			"tuple": "cpp",
+			"*.tcc": "cpp",
+			"system_error": "cpp",
+			"type_traits": "cpp",
+			"utility": "cpp"
 		}
 	}
 }

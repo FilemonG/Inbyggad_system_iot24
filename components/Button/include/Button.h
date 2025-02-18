@@ -13,7 +13,7 @@ typedef enum {
 
 class Button{
     private:
-    void (*onPressedCallback)(int) = nullptr;
+    void (*onPressedCallback)(int); // = nullptr;
     public:
         gpio_num_t pinNum;
         gpio_mode_t mode;

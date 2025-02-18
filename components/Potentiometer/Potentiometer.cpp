@@ -1,8 +1,7 @@
-#include <stdio.h>
 #include "Potentiometer.h"
 
 void Potentiometer::update(void){
-    
+
     int value = adc1_get_raw(channel);
     if (index > arrSize-1)
     {
@@ -10,22 +9,36 @@ void Potentiometer::update(void){
     }
     filterArr[index] = value;
     index++;
-    
+
+summa = 0;
+static int latch = 0;  // Statisk latch så att den inte nollställs varje gång
+
+for (int i = 0; i < arrSize; i++) { 
+    summa += filterArr[i];
+}
+
+// Kontrollera att arrSize inte är 0 för att undvika division med noll
+if (arrSize > 0) {
+    medel = summa / arrSize;
+
+    if (medel < 1000 && latch == 0) {
+        thresholeState(2,0);
+        latch = 1;  // Sätt latch så att anropet endast sker en gång
+    }
+   if (medel >= 1000 && latch == 1) {
+      latch = 0;  // Återställ latch när medelvärdet lämnar 2000
+   }
+   
+}
 }
 int Potentiometer::getValue(void){
-    int summa = 0;
-    for (int i = 0; i < arrSize; i++)
-    {
-        summa += filterArr[i];
-        
-    }
-    
-    
-    return summa / arrSize;
-    
+   return medel; //returnerar tot-summa / storleken på arr för att få medelvärde */
 }
 void Potentiometer::setOnThreshold(int threshold, bool risingEdge, void (*onThreshold)(int pin, int value), int data)
 {
     cb = onThreshold;
     data = data;
+}
+void Potentiometer::doCallBack(int pin,int value){
+    cb(pin,value);
 }

@@ -14,10 +14,11 @@ private:
     adc1_channel_t channel;
     int thresHold;
     bool risingEdge;
-    //int currentValue;
     int filterArr[arrSize];
     int index;
     int data;
+    int summa = 0;
+    int medel;
     Callback cb;
 
 public:
@@ -36,6 +37,10 @@ public:
     int getData() {return data;}
     int getPin() {return pin;}
     Callback getfunk() {return cb;}
+    void doCallBack(int pin, int value);
+    void thresholeState(int pin, int value){
+    printf("HEEEEJ\n");
+}
 };
 
 
