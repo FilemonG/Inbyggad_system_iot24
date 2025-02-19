@@ -21,7 +21,7 @@ void Button::init()
 void Button::button_uppdate(){
    
     TickType_t time = xTaskGetTickCount();
-   int level = gpio_get_level(pinNum);
+    int level = gpio_get_level(pinNum);
    
    switch (curr_state)
    {
@@ -30,22 +30,25 @@ void Button::button_uppdate(){
         {
             elapsetime = time;
             next_state = de_off;
-        }
-        break;
-    case de_off:
-        if(time - elapsetime >= pdMS_TO_TICKS(30)){
-            next_state = on;
-            elapsetime = time;
             if (onPressedCallback)
             {
                 onPressedCallback(pinNum);
             }
         }
         break;
+    case de_off:
+        if(time - elapsetime >= pdMS_TO_TICKS(30)){
+            next_state = on;
+            elapsetime = time;
+            
+        }
+        break;
     case on:
         if (level == 0)
         {
             next_state = de_on;
+            elapsetime = time;
+            
         }
         break;
     case de_on:
@@ -61,9 +64,18 @@ void Button::button_uppdate(){
   
     //printf(ANSI_Yellow"lvl: %d state: %d\n", level, curr_state);
     elapsetime = time;
+    curr_state = next_state;
 }
 bool Button::isPressed(){
-    return gpio_get_level(pinNum);
+   if (curr_state == de_off || curr_state == on )
+    {
+        return true;
+    }
+    else 
+    {
+        return false;
+    }
+   
 }
 void Button::setOnPressed(void(*onPressed)(int pin)) {
     onPressedCallback = onPressed;

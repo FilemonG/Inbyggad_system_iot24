@@ -38,9 +38,9 @@ public:
     int getPin() {return pin;}
     Callback getfunk() {return cb;}
     void doCallBack(int pin, int value);
-    void thresholeState(int pin, int value){
-    printf("HEEEEJ\n");
-}
+    void thresholeState(int pin, int value);
+    int getRisingEdge(){return risingEdge;}
+    
 };
 
 

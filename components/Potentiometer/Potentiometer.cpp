@@ -22,11 +22,18 @@ if (arrSize > 0) {
     medel = summa / arrSize;
 
     if (medel < 1000 && latch == 0) {
-        thresholeState(2,0);
-        latch = 1;  // Sätt latch så att anropet endast sker en gång
+        if (getRisingEdge() == false && cb != NULL )
+        {
+            cb(2,0);
+        }
+            latch = 1;  
     }
    if (medel >= 1000 && latch == 1) {
-      latch = 0;  // Återställ latch när medelvärdet lämnar 2000
+    if (getRisingEdge() == true && cb != NULL)
+    {
+        cb(2,0);
+    } 
+         latch = 0; 
    }
    
 }
@@ -38,7 +45,8 @@ void Potentiometer::setOnThreshold(int threshold, bool risingEdge, void (*onThre
 {
     cb = onThreshold;
     data = data;
+    this->risingEdge = risingEdge;
 }
 void Potentiometer::doCallBack(int pin,int value){
-    cb(pin,value);
+   cb(pin,value);
 }
