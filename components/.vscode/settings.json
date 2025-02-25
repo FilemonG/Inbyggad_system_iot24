@@ -1,3 +1,4 @@
 {
-    "C_Cpp.default.compilerPath": "/usr/bin/clang++"
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+    "cmake.sourceDirectory": "/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/components/AnalogLed"
 }

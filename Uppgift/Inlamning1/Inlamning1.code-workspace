@@ -54,7 +54,11 @@
 			"utility": "cpp",
 			"atomic": "cpp",
 			"random": "cpp",
-			"cstdlib": "cpp"
+			"cstdlib": "cpp",
+			"cmath": "cpp",
+			"numbers": "cpp",
+			"cstdint": "cpp",
+			"stop_token": "cpp"
 		}
 	}
 }

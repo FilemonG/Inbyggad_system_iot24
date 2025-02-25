@@ -20,7 +20,6 @@ void BinaryLed::Led_update() {
             updateTime = xTaskGetTickCount();
             gpio_set_level(pinNum, 0);
             isOn = false;
-            
         }
     }
     else

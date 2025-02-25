@@ -30,18 +30,18 @@ public:
       milliseconds_on(1000),
       milliseconds_off(1000),
       isOn(true)
-{
-    gpio_config_t io_conf = {};
-    io_conf.pin_bit_mask = pin_bit_mask;
-    io_conf.mode = mode;
-    io_conf.pull_up_en = pull_up_en;
-    io_conf.pull_down_en = pull_down_en;
-    io_conf.intr_type = GPIO_INTR_DISABLE;
-    gpio_config(&io_conf);
+    {
+        gpio_config_t io_conf = {};
+        io_conf.pin_bit_mask = pin_bit_mask;
+        io_conf.mode = mode;
+        io_conf.pull_up_en = pull_up_en;
+        io_conf.pull_down_en = pull_down_en;
+        io_conf.intr_type = GPIO_INTR_DISABLE;
+        gpio_config(&io_conf);
 
-    setLed(true);
-    updateTime = xTaskGetTickCount();
-}
+        setLed(true);
+        updateTime = xTaskGetTickCount();
+    }
 
     void Led_update();
     void setLed(bool value);

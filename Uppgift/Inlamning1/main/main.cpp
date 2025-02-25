@@ -1,14 +1,11 @@
-#include "esp_err.h"
-#include "freertos/FreeRTOS.h"
-#include "esp_log.h"
+
+#include "AnalogLed.h"
 //include "Button.h"
 //#include "Potentiometer.h"
 //#include "BinaryLed.h"
 
-#define ANSI_GREEN "\033[0;32m"
-#define ANSI_RED "\033[0;31m"
-#define ANSI_Yellow "\033[0;33m"
 
+//---------------------Call funktioner---------------------------
 //void thresholeState(int pin, int value){printf("HEEfffEEJ.\n");} // ska kallas när getValue == 1000;
 //void pressState(int x){ ESP_LOGI("BUTTON", "Button pressed on GPIO %d", x); } // ska kallas när knappen är tryckt
 
@@ -17,8 +14,13 @@ extern "C"
 {
     void app_main(void) 
     {
-       
-        
+        AnalogLed myAnalog = AnalogLed(GPIO_NUM_12, 400, LEDC_TIMER_8_BIT);   //LEDC_TIMER_13_BIT
+        myAnalog.setLedAnalog();
+        myAnalog.sinAnalog(3000);
+        while (true){
+            myAnalog.updateAnalog();
+            vTaskDelay(pdMS_TO_TICKS(100));
+        }
     }   
 }
 
@@ -65,7 +67,7 @@ extern "C"
     // 
         BinaryLed myLed(GPIO_NUM_12, GPIO_MODE_OUTPUT, GPIO_PULLUP_DISABLE , GPIO_PULLDOWN_ENABLE);
         myLed.setLed(false);
-        myLed.blink(1000, 10);
+        myLed.blink(1000, 100);
         
         while (true) {
             myLed.Led_update();
