@@ -38,7 +38,7 @@ void AnalogLed::updateAnalog() {
             sinDuty = ((sin(i * (2*M_PI) / sinPeriod) + 1) / 2 ) * 256;
             ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, sinDuty);
             ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
-            vTaskDelay(pdMS_TO_TICKS(10));
+            vTaskDelay(pdMS_TO_TICKS(80));
             printf("Duty: %d\n",sinDuty);
         }
     }

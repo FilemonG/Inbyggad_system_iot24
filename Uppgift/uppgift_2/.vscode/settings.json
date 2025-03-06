@@ -10,5 +10,12 @@
     "idf.customExtraVars": {
         "IDF_TARGET": "esp32c6"
     },
+    "files.associations": {
+        "stdio.h": "c",
+        "nvss.h": "c",
+        "nvs_flash.h": "c",
+        "esp_log.h": "c",
+        "format": "cpp"
+    },
     "idf.flashType": "UART"
 }
