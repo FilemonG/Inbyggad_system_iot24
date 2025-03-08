@@ -7,9 +7,20 @@ extern "C"
     {
         NVSS myNvs;
         myNvs.init();
-        myNvs.getDeviceName (); 
-        myNvs.getDeviceName();
-        myNvs.setDeviceName();
-        myNvs.setSerialNumber();
+        
+        myNvs.setDeviceName("Radio");
+        myNvs.setSerialNumber("Fil573");
+
+        char* deviceName = myNvs.getDeviceName ();
+        if (deviceName)
+        {
+            printf("Device name: %s\n",deviceName);
+            free(deviceName);
+        }
+        else
+        {
+            printf("No device name found...\n");
+        }
+        myNvs.getSerialNumber();
     }
 }

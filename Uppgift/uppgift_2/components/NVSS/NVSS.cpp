@@ -25,7 +25,7 @@ void NVSS::init(){
     if (err != ESP_OK)
     {
         counter = 0;
-        printf("Didnt find counter");
+        printf("Didnt find counter \n");
     }
      else
     {
@@ -50,6 +50,23 @@ void NVSS::init(){
     printf("Counter: %ld", counter);
 
 }
+
+void NVSS::setDeviceName(const char* devName) {
+    err = nvs_set_str(handle, "Radio", devName);
+    if (err != ESP_OK) {
+        printf("Fel vid skrivning av device name\n");
+        return;
+    }
+    nvs_commit(handle);
+}
+void NVSS::setSerialNumber (const char* serialNummer){
+    err = nvs_set_str(handle, "Radi324E", serialNummer);
+    if (err != ESP_OK)
+    {
+        printf("Fel vid skrivning av device nummer.\n");
+    }
+    nvs_commit(handle);
+}
 char* NVSS::getDeviceName (){
     // Example (without error checking) of using nvs_get_str to get a string into dynamic array:
     size_t required_size;
@@ -71,16 +88,6 @@ char* NVSS::getDeviceName (){
     }
     return device_name;
 }
-void getSerialNumber (){
-    
-}
-void NVSS::setDeviceName(const char* devName) {
-    esp_err_t err = nvs_set_str(handle, "Radio", devName);
-    if (err != ESP_OK) {
-        printf("Fel vid skrivning av device name\n");
-        return;
-    }
-    nvs_commit(handle);
-}
-void NVSS::setSerialNumber (const char* serialNummer){
+char* NVSS::getSerialNumber (){
+    return "Fill57";
 }

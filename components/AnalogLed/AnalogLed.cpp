@@ -2,7 +2,7 @@
 
 AnalogLed::AnalogLed(int gpio_num, uint32_t freq, ledc_timer_bit_t resolution) {
     
-    ledc_timer_config_t ledc_timer = {
+        ledc_timer = {
         .speed_mode       = LEDC_LOW_SPEED_MODE,
         .duty_resolution  = resolution,
         .timer_num        = LEDC_TIMER_0,
@@ -10,9 +10,7 @@ AnalogLed::AnalogLed(int gpio_num, uint32_t freq, ledc_timer_bit_t resolution) {
         .clk_cfg          = LEDC_AUTO_CLK
     };
     ledc_timer_config(&ledc_timer);
-
-    
-    ledc_channel_config_t ledc_channel = {
+    ledc_channel = {
         .gpio_num       = gpio_num,
         .speed_mode     = LEDC_LOW_SPEED_MODE,
         .channel        = LEDC_CHANNEL_0,
@@ -22,29 +20,40 @@ AnalogLed::AnalogLed(int gpio_num, uint32_t freq, ledc_timer_bit_t resolution) {
        
     };
     ledc_channel_config(&ledc_channel);
+    sinusOff = true;
+    sinPeriod = 1000; 
+    updateTime = 0;
 }
 
 
-void AnalogLed::setLedAnalog() {
+void AnalogLed::setLedAnalog(int newDuty) {
     sinusOff = true;
+    sinDuty = newDuty;
 }
 
 void AnalogLed::updateAnalog() {
-    if (sinusOff) {
-        ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, sinDuty);
+    curTime = xTaskGetTickCount();
+    if (sinusOff)
+    {
+        ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, (int)sinDuty);
         ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
-    } else {
-        for (int i = 0; i < sinPeriod; i++) {
-            sinDuty = ((sin(i * (2*M_PI) / sinPeriod) + 1) / 2 ) * 256;
-            ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, sinDuty);
-            ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
-            vTaskDelay(pdMS_TO_TICKS(80));
-            printf("Duty: %d\n",sinDuty);
-        }
     }
-}
+    
+    if (!sinusOff) { 
+        if (curTime - updateTime >= pdMS_TO_TICKS(10)) { // Uppdatera var 10 ms
+            float timeRatio = fmod((float)curTime / pdMS_TO_TICKS(sinPeriod), 1.0f); 
+            sinDuty = (sin(2 * M_PI * timeRatio) + 1) * 127.5f; // Skala till 0-255
 
-void AnalogLed::sinAnalog(int period) {
+            ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, (int)sinDuty);
+            ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
+
+            printf("Duty: %d timeRatio: %f\n", (int)sinDuty, timeRatio);
+
+            updateTime = curTime;
+           }
+        }
+}
+void AnalogLed::sinAnalog(int period){
     sinusOff = false;
     sinPeriod = period;
 }

@@ -15,11 +15,14 @@ extern "C"
     void app_main(void) 
     {
         AnalogLed myAnalog = AnalogLed(GPIO_NUM_12, 400, LEDC_TIMER_8_BIT);   //LEDC_TIMER_13_BIT
-        myAnalog.setLedAnalog();
-        myAnalog.sinAnalog(360);
+        
+        //myAnalog.setLedAnalog(255);
+        myAnalog.sinAnalog(1000);
+        
         while (true){
             myAnalog.updateAnalog();
-            vTaskDelay(pdMS_TO_TICKS(100));
+            vTaskDelay(pdMS_TO_TICKS(10));
+            
         }
     }   
 }

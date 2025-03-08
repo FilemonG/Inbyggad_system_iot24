@@ -9,13 +9,14 @@
 class NVSS {
 private:
 public:
-    char serialNummer[20];
-    char* devName[15];
+    const char* devName[15];
+    const char* serialNummer[20];
     nvs_handle_t handle;
     esp_err_t err;
     void init();
-    void getDeviceName ();
-    void getSerialNumber (); 
     void setDeviceName (const char* devName);
     void setSerialNumber (const char* serialNummer);
+    char* getDeviceName ();
+    char* getSerialNumber(); 
+    
 };
