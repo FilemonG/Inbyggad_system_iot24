@@ -52,6 +52,7 @@ void NVSS::init(){
 }
 
 void NVSS::setDeviceName(const char* devName) {
+    err = 
     err = nvs_set_str(handle, "Radio", devName);
     if (err != ESP_OK) {
         printf("Fel vid skrivning av device name\n");
@@ -69,7 +70,7 @@ void NVSS::setSerialNumber (const char* serialNummer){
 }
 char* NVSS::getDeviceName (){
     // Example (without error checking) of using nvs_get_str to get a string into dynamic array:
-    size_t required_size;
+    int required_size;
     err = nvs_get_str(handle, "Radio", NULL, &required_size);
     if (err != ESP_OK)
     {

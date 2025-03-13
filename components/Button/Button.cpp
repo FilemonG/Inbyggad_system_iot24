@@ -62,7 +62,6 @@ void Button::button_uppdate(){
     break;
    }
   
-    //printf(ANSI_Yellow"lvl: %d state: %d\n", level, curr_state);
     elapsetime = time;
     curr_state = next_state;
 }
