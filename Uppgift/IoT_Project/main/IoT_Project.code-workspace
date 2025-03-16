@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../components/Button"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp"
+		}
+	}
+}
