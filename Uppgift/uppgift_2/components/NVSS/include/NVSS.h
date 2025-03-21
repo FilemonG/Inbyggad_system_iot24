@@ -13,6 +13,7 @@ public:
     const char* serialNummer[20];
     nvs_handle_t handle;
     esp_err_t err;
+    int nummer;
     void init();
     void setDeviceName (const char* devName);
     void setSerialNumber (const char* serialNummer);

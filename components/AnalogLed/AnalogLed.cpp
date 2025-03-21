@@ -29,20 +29,17 @@ AnalogLed::AnalogLed(int gpio_num, uint32_t freq, ledc_timer_bit_t resolution) {
 void AnalogLed::setLedAnalog(int newDuty) {
     sinusOff = true;
     sinDuty = newDuty;
+    ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, (int)sinDuty);
+    ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
 }
 
 void AnalogLed::updateAnalog() {
     curTime = xTaskGetTickCount();
-    if (sinusOff)
-    {
-        ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, (int)sinDuty);
-        ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
-    }
     
     if (!sinusOff) { 
-        if (curTime - updateTime >= pdMS_TO_TICKS(10)) { // Uppdatera var 10 ms
+        if (curTime - updateTime >= pdMS_TO_TICKS(10)) { 
             float timeRatio = fmod((float)curTime / pdMS_TO_TICKS(sinPeriod), 1.0f); 
-            sinDuty = (sin(2 * M_PI * timeRatio) + 1) * 127.5f; // Skala till 0-255
+            sinDuty = (sin(2 * M_PI * timeRatio) + 1) * 127.5f;
 
             ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, (int)sinDuty);
             ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);

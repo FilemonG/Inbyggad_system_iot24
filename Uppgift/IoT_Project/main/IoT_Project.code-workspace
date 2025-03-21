@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../../../components/Button"
+		},
+		{
+			"path": "../../../components/Potentiometer"
 		}
 	],
 	"settings": {

@@ -15,7 +15,8 @@
         "nvss.h": "c",
         "nvs_flash.h": "c",
         "esp_log.h": "c",
-        "format": "cpp"
+        "format": "cpp",
+        "iostream": "cpp"
     },
     "idf.flashType": "UART"
 }

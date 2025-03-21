@@ -1,12 +1,15 @@
 
-#include <driver/adc.h>
+#include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "driver/ledc.h"
+#include <iostream>
 
 class LightSensor {
-public:
-    LightSensor(adc1_channel_t sensorPin);  // Konstruktor
-    void begin();                           // Initiera sensorn
-    int readLightLevel();                   // Läs ljusnivån
-
 private:
-    adc1_channel_t sensorPin;               // Pin för ljussensorn
+public:
+    gpio_num_t sensorPin;
+    LightSensor(gpio_num_t Pin):
+    sensorPin(Pin){}
+    void init();                           
+    int readLightLevel();               
 };

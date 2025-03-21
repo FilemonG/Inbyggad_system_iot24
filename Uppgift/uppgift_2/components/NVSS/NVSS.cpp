@@ -1,7 +1,8 @@
 #include "NVSS.h"
 //#include "nvs_flash/include/nvs_flash.h"
 
-
+// const char* devName[15];
+// const char* serialNummer[20];
 
 void NVSS::init(){
     err = nvs_flash_init();
@@ -45,14 +46,9 @@ void NVSS::init(){
         printf("Failed to commit to nvs");
     }
 
-    nvs_close(handle);
-
-    printf("Counter: %ld", counter);
-
 }
 
 void NVSS::setDeviceName(const char* devName) {
-    err = 
     err = nvs_set_str(handle, "Radio", devName);
     if (err != ESP_OK) {
         printf("Fel vid skrivning av device name\n");
@@ -69,16 +65,14 @@ void NVSS::setSerialNumber (const char* serialNummer){
     nvs_commit(handle);
 }
 char* NVSS::getDeviceName (){
-    // Example (without error checking) of using nvs_get_str to get a string into dynamic array:
-    int required_size;
+    size_t required_size;
     err = nvs_get_str(handle, "Radio", NULL, &required_size);
     if (err != ESP_OK)
     {
         printf("Fel vi läsning av minnetn.\n");
-        return NULL; // för att fri gör minnet??
+        return NULL; 
     }
     
-
     char* device_name =(char*) malloc(required_size);
     err = nvs_get_str(handle, "Radio", device_name, &required_size);
     if (err != ESP_OK)
@@ -90,5 +84,23 @@ char* NVSS::getDeviceName (){
     return device_name;
 }
 char* NVSS::getSerialNumber (){
-    return "Fill57";
+    size_t required_size;
+    err = nvs_get_str(handle, "Radi324E", NULL, &required_size);
+    if (err != ESP_OK)
+    {
+        printf("Fel vi läsning av minnetn.\n");
+        return NULL; 
+    }
+    
+
+    char* device_number =(char*) malloc(required_size);
+    err = nvs_get_str(handle, "Radi324E", device_number, &required_size);
+    if (err != ESP_OK)
+    {
+        
+        printf("Fel vid läsning sträing av NVS.\n");
+        free(device_number);
+        return NULL;
+    }
+    return device_number;
 }
