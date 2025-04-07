@@ -1,22 +1,14 @@
 {
     "C_Cpp.intelliSenseEngine": "default",
-    "idf.espIdfPath": "/Users/filimonangosom/esp/v5.4/esp-idf",
+    "idf.espIdfPath": "/Users/filimonangosom/esp/v5.1-rc2/esp-idf",
     "idf.pythonInstallPath": "/usr/bin/python3",
     "idf.openOcdConfigs": [
         "board/esp32c6-ftdi.cfg"
     ],
-    "idf.port": "/dev/tty.usbserial-110",
+    "idf.port": "/dev/tty.usbserial-10",
     "idf.toolsPath": "/Users/filimonangosom/.espressif",
     "idf.customExtraVars": {
         "IDF_TARGET": "esp32c6"
-    },
-    "files.associations": {
-        "stdio.h": "c",
-        "nvss.h": "c",
-        "nvs_flash.h": "c",
-        "esp_log.h": "c",
-        "format": "cpp",
-        "iostream": "cpp"
     },
     "idf.flashType": "UART"
 }

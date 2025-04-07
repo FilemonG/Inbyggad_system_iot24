@@ -1,8 +1,7 @@
 
-
-#include <iostream>
-#include <stdio.h>
-#include <string.h>
+// #include <iostream>
+// #include <stdio.h>
+// #include <string.h>
 #include "nvs_flash.h"
 #include "esp_log.h"
 
@@ -14,10 +13,10 @@ public:
     nvs_handle_t handle;
     esp_err_t err;
     int nummer;
-    void init();
-    void setDeviceName (const char* devName);
-    void setSerialNumber (const char* serialNummer);
-    char* getDeviceName ();
+    int init();
+    void setDeviceName (const char* new_devName);
+    void setSerialNumber (const char* new_serialNummer);
+    /*char*/ int getDeviceName ();
     char* getSerialNumber(); 
     
 };
