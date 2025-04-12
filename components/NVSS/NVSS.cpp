@@ -15,14 +15,14 @@ int NVSS::init(){
     if (err != ESP_OK)
     {
         printf("Failed to open namespace");
-        return;
+        return NULL;
     }
     if (err == ESP_OK)
     {
          printf("Lyckades to open namespace.\n");
     }
 
-    size_t* required_size;
+    size_t required_size;
     err = nvs_get_str(handle, DEVICENAME, NULL, &required_size);
     if (err != ESP_OK)
     {
@@ -30,7 +30,7 @@ int NVSS::init(){
         return NULL; 
     }
     //finns flera möjliga fel
-    if (required_size <= 0 && required_size > 15)
+    if (required_size <= 0 || required_size > 15)
     {
         printf("Fel storlek\n");
         return NULL;
@@ -46,8 +46,10 @@ int NVSS::init(){
     }
     //devName = device_name;
     strcpy(devName, device_name)
-    devName[14] = "\0";
-
+    devName[14] = '\0';
+    return 0;
+//________________
+    
 }
 
 void NVSS::setDeviceName(const char* new_devName) {
@@ -68,9 +70,9 @@ void NVSS::setSerialNumber (const char* new_serialNummer){
     }
     nvs_commit(handle);
 }
-void NVSS::getDeviceName (){
+void* NVSS::getDeviceName ()const {
     return devName;
 }
-char* NVSS::getSerialNumber (){
+char* NVSS::getSerialNumber () const {
     return serialNummer;
 }

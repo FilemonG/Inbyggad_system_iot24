@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../../Ovning/Project_fun"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp"
+		}
+	}
+}

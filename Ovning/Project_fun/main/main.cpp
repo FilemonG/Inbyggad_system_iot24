@@ -11,7 +11,5 @@ extern "C"
     void app_main(void)
     {
         NVSS myNvs;
-        //myNvs.getDeviceName();
-        myNvs.getSerialNumber();
     }
 }

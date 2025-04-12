@@ -1,0 +1,26 @@
+{
+    "project_name":       "bootloader",
+    "project_path":       "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/bootloader/subproject",
+    "build_dir":          "/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/bootloader",
+    "config_file":        "/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/sdkconfig",
+    "config_defaults":    "",
+    "bootloader_elf":     "",
+    "app_elf":            "bootloader.elf",
+    "app_bin":            "bootloader.bin",
+    "build_type":         "flash_app",
+    "git_revision":       "v5.1-rc2-dirty",
+    "target":             "esp32c6",
+    "rev":                "",
+    "min_rev":            "0",
+    "max_rev":            "99",
+    "phy_data_partition": "",
+    "monitor_baud" :      "115200",
+    "monitor_toolprefix": "riscv32-esp-elf-",
+    "config_environment" : {
+        "COMPONENT_KCONFIGS" : "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/efuse/Kconfig;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esp_common/Kconfig;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esp_hw_support/Kconfig;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esp_system/Kconfig;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/freertos/Kconfig;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/hal/Kconfig;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/log/Kconfig;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/newlib/Kconfig;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/soc/Kconfig;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS_PROJBUILD" : "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/bootloader/Kconfig.projbuild;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esp_app_format/Kconfig.projbuild;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esp_rom/Kconfig.projbuild;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esptool_py/Kconfig.projbuild;/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/partition_table/Kconfig.projbuild"
+    },
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp_app_format", "esp_common", "esp_hw_support", "esp_rom", "esp_system", "esptool_py", "freertos", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "riscv", "soc", "spi_flash", "" ],
+    "build_component_paths" : [ "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/bootloader", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/bootloader_support", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/efuse", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esp_app_format", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esp_common", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esp_hw_support", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esp_rom", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esp_system", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/esptool_py", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/freertos", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/hal", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/log", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/bootloader/subproject/main", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/bootloader/subproject/components/micro-ecc", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/newlib", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/partition_table", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/riscv", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/soc", "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/components/spi_flash", "" ],
+    "debug_prefix_map_gdbinit": ""
+}

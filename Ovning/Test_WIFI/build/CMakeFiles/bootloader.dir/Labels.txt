@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/CMakeFiles/bootloader
+/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/CMakeFiles/bootloader.rule
+/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/CMakeFiles/bootloader-complete.rule
+/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
