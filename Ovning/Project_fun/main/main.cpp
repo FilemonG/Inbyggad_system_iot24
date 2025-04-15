@@ -10,6 +10,11 @@ extern "C"
 {
     void app_main(void)
     {
-        NVSS myNvs;
+        NVSS myNvss;
+        myNvss.init();
+        myNvss.setDeviceName ("Esp32c6\n");
+        myNvss.setSerialNumber("TESTESP32\n");
+        myNvss.getDeviceName ();
+        myNvss.getSerialNumber(); 
     }
 }
