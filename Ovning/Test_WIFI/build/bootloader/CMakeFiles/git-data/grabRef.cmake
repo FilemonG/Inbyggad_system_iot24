@@ -18,7 +18,7 @@ set(HEAD_HASH)
 file(READ "/Users/filimonangosom/Documents/GitHub/Inbyggad_system_iot24/Ovning/Test_WIFI/build/bootloader/CMakeFiles/git-data/HEAD" HEAD_CONTENTS LIMIT 1024)
 
 string(STRIP "${HEAD_CONTENTS}" HEAD_CONTENTS)
-set(GIT_DIR "/Users/filimonangosom/esp/v5.1-rc2/esp-idf/.git")
+set(GIT_DIR "/Users/filimonangosom/esp/v5.4.1/esp-idf/.git")
 # handle git-worktree
 if(EXISTS "${GIT_DIR}/commondir")
 	file(READ "${GIT_DIR}/commondir" GIT_DIR_NEW LIMIT 1024)

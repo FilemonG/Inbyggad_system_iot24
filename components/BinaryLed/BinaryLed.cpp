@@ -7,7 +7,7 @@ void BinaryLed::setLed(bool value) {
 }
 
 void BinaryLed::Led_update() {
-    printf("%d\n",state);
+
     curTime = xTaskGetTickCount();
     if (state == true)
     {
@@ -28,7 +28,6 @@ void BinaryLed::Led_update() {
             updateTime = xTaskGetTickCount();
             isOn = true;
         }
-   
 }
 
 void BinaryLed::blink(int milliseconds_on, int milliseconds_off) {

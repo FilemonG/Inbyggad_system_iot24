@@ -2,10 +2,6 @@
 #include "Button.h"
 
 
-#define ANSI_RED "\033[0;31m"
-#define ANSI_GREEN "\033[0;32m"
-#define ANSI_Yellow "\033[0;33m"
-
 void Button::init()
 {
     gpio_config_t buttonConf;

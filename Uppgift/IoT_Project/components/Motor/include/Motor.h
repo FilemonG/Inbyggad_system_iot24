@@ -11,7 +11,7 @@ public:
     gpio_num_t pinNum1;
     gpio_num_t pinNum2;
     ledc_channel_t pwmChannel;
-    int duty;
+    int duty1;
 
     Motor( gpio_num_t pin1, gpio_num_t pin2, ledc_channel_t Channel){
     pinNum1 = pin1;
@@ -27,8 +27,6 @@ public:
     gpio_config(&pinConf);
    
     }
-        // gpio_set_direction(pinNum1, GPIO_MODE_OUTPUT);
-        // gpio_set_direction(pinNum2, GPIO_MODE_OUTPUT);
         
     void setPWM();
     void setSpeed(int duty);

@@ -24,7 +24,7 @@ void Motor::setPWM(){
 }
 
 void Motor::setSpeed(int duty){
-    this->duty = duty;
+    duty1 = duty;
     ledc_set_duty(LEDC_LOW_SPEED_MODE, pwmChannel, duty);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, pwmChannel);
 }

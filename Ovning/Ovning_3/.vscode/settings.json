@@ -1,6 +1,6 @@
 {
     "C_Cpp.intelliSenseEngine": "default",
-    "idf.espIdfPath": "/Users/filimonangosom/esp/v5.4/esp-idf",
+    "idf.espIdfPath": "/Users/filimonangosom/esp/v5.1-rc2/esp-idf",
     "idf.openOcdConfigs": [
         "board/esp32c6-ftdi.cfg"
     ],
@@ -11,5 +11,6 @@
         "gpio.h": "c",
         "freertos.h": "c",
         "esp_err.h": "c"
-    }
+    },
+    "idf.pythonInstallPath": "/usr/bin/python3"
 }

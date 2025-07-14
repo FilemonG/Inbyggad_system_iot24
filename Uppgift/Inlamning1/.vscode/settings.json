@@ -1,6 +1,6 @@
 {
     "C_Cpp.intelliSenseEngine": "default",
-    "idf.espIdfPath": "/Users/filimonangosom/esp/v5.4/esp-idf",
+    "idf.espIdfPath": "/Users/filimonangosom/esp/v5.4.1/esp-idf",
     "idf.openOcdConfigs": [
         "board/esp32c6-ftdi.cfg"
     ],

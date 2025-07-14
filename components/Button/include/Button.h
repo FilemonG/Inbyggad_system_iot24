@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <iostream>
 #include "driver/gpio.h"
+#include "esp_log.h"
+#include "esp_err.h"
 #include "freertos/FreeRTOS.h"
 
 typedef enum {
