@@ -54,5 +54,3 @@ void AnalogLed::sinAnalog(int period){
     sinusOff = false;
     sinPeriod = period;
 }
-
-// commit från jobb dator
