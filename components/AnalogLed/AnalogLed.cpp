@@ -7,7 +7,7 @@ AnalogLed::AnalogLed(int gpio_num, uint32_t freq, ledc_timer_bit_t resolution) {
         .duty_resolution  = resolution,
         .timer_num        = LEDC_TIMER_0,
         .freq_hz          = freq,
-        .clk_cfg          = LEDC_AUTO_CLK
+        .clk_cfg          = LEDC_AUTO_CLK  
     };
     ledc_timer_config(&ledc_timer);
     ledc_channel = {
@@ -54,3 +54,5 @@ void AnalogLed::sinAnalog(int period){
     sinusOff = false;
     sinPeriod = period;
 }
+
+// commit från jobb dator
