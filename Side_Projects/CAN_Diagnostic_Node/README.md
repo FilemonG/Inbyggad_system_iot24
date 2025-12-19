@@ -1,10 +1,19 @@
-# _Sample project_
+# CAN Diagnostic node
+    this project is for educational purposes, CAN messages send and recive. this project will help you read data from the buss network. 
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+# Build
+    1. install ESP-IDF extention, v5.4.1
+    2. flash method use UART
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+# Hardware
+    1. ESP32-C6
+    2. SN65HVD230 VP230 (CAN Transceiver)
+    
 
+
+# Links
+  [datasheet](https://www.ti.com/lit/ds/symlink/sn65hvd230.pdf).
+  ![SN65HVD230 VP230](document/SN65HVD230_VP230.jpg)
 
 
 ## How to use example
@@ -30,3 +39,5 @@ Below is short explanation of remaining files in the project folder.
 ```
 Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
 They are not used or needed when building with CMake and idf.py.
+
+()
